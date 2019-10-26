@@ -1,0 +1,61 @@
+body > nav{
+    background: rgb(233, 226, 226);
+    padding: 7px 30px;
+}
+
+nav > h3{
+    float: left;
+    font-weight: bolder;
+    letter-spacing: -1px;
+}
+
+nav > ul{
+    margin: 5px;
+}
+
+nav > ul li{
+    list-style: none;
+    float: left;
+    padding: 0px 22px;
+}
+
+nav > ul > img{
+    width: 20px;
+    float: left;
+    margin-left: -20px;
+}
+
+nav > ul li a{
+    font-size: 17px;
+    text-decoration: none;    
+    color: rgb(57, 139, 247);
+}
+
+nav::after{
+    clear: both;
+    display: block;
+    content: "";
+}
+
+#right-side-nav{
+    float: right;
+}
+
+#right-side-nav > input{
+    color: gray;
+    height: 30px;
+
+}
+
+#right-side-nav > input::placeholder{
+    color: gray;
+    padding-left: 7px;
+}
+
+#right-side-nav > button{
+    margin: 0px 8px;
+    background:rgb(57, 139, 247);
+    color: white;
+    border: none;
+    padding: 7px 12px;
+}

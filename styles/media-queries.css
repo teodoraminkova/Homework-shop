@@ -1,0 +1,128 @@
+/* @media (max-width: 880px){   
+    aside > div{
+        margin: 0;
+    }
+    
+    .btns > .social {     
+        display: block;  
+        width: 100%;
+        margin: 5px 0px;
+    }
+} */
+
+@media (max-width: 840px){ 
+    body > main > aside {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+
+    .size-input, .quantity{        
+        width: 35%;
+        margin: auto;
+    }
+
+    body > main > aside > button{
+        width: 35%;
+        margin: auto;
+    }
+
+    .quantity > label > input {
+        display: block;
+    }
+
+    aside > button, .btns > .social {
+        width: 35%;
+        margin: 7px auto;
+    }
+}
+
+@media (max-width: 660px){
+    body > nav{
+        text-align: center;
+    }
+
+    nav > ul {
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+    }
+
+    #right-side-nav{
+        float: none;        
+        margin-top: 11px;
+        margin-left: 60px;
+    }
+    
+    main > #first-sec{
+        width: 100%;
+    }
+
+    aside > .buy{
+        width: 55%;
+        margin: auto;
+    }
+
+    .buy > button{
+        width: 100%;
+    }
+
+    main > #second-sec .second-row {
+        display: inline-block;
+    }
+
+    main > #second-sec .second-row > article {
+        width: 50%;
+        float: left;
+    }
+
+    .second-row::after{
+        clear: both;
+        display: block;
+        content: "";
+    }
+}
+
+@media (max-width: 430px){
+    nav > h3{
+        float: none;    
+        padding: 10px 0px 17px 0px;
+    } 
+
+    nav > ul{
+        display: inline-block;
+        text-align: center;
+    }
+
+    main{
+        padding: 11px 4px;
+    }
+    
+    #right-side-nav{     
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 338px){    
+    nav > ul > img{
+        margin-left: -11px;
+    }
+
+    main > #pages > ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav > ul li{
+        padding: 0px 11px;
+    }
+
+    body > footer > ul{
+        margin-left: 0px;
+    }
+
+    body > footer ul li {
+        float: none;
+        padding: 0px 55px;
+    }
+}
