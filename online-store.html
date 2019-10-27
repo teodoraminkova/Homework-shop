@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +10,27 @@
     <link rel="stylesheet" href="./styles/store-style.css">
     <title>Online shop</title>
 </head>
+
 <body>
     <nav>
         <h3>Yeti Store</h3>
-        <ul>
-            <li>
-                <a href="">One</a> 
-                <i class="fas fa-sort-down"></i>               
-            </li>
-            <!-- <img src="./images/download.png" alt="Icon"> -->
-            <li>
-                <a href="">Two</a>
-            </li>
-            <li>
-                <a href="">Three</a>
-            </li>
-        </ul>
-        <div id="right-side-nav">
-            <input type="text" placeholder="Search">
-            <button>Search</button>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="">One</a>
+                    <i class="fas fa-sort-down"></i>
+                </li>
+                <li>
+                    <a href="">Two</a>
+                </li>
+                <li>
+                    <a href="">Three</a>
+                </li>
+            </ul>
+            <div id="right-side-nav">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
         </div>
     </nav>
     <main>
@@ -47,25 +50,51 @@
                 </li>
             </ul>
         </div>
-            <section id="first-sec">
-                <div id="big-pic">
+        <section id="first-sec">
+            <div id="big-pic">
+                <picture>
+                    <source media="(min-width: 880px)" srcset="./images/650x350.png">
+                    <source media="(min-width: 660px)" srcset="./images/400x250.png">
+                    <source media="(min-width: 430px)" srcset="./images/350x200.png">
                     <img src="./images/650x350.png" alt="Big picture">
+                </picture>
+            </div>
+            <div class="first-sec-imgs">
+                <div class="pics">
+                    <h2 class="overlay">Overlay</h2>
+                    <picture>                        
+                        <source media="(min-width: 880px)" srcset="./images/250x200.png">
+                        <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                        <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                        <img src="./images/250x200.png" alt="Normal picture">
+                    </picture>
                 </div>
-                    <div class="first-sec-imgs">
-                        <div class="pics">
-                            <img src="./images/250x200.png" alt="Normal picture">
-                        </div>
-                        <div class="pics">                        
-                            <img src="./images/250x200.png" alt="Normal picture">
-                        </div>
-                        <div class="pics">             
-                            <img src="./images/250x200.png" alt="Normal picture">
-                        </div
-                        ><div class="pics">             
-                            <img src="./images/250x200.png" alt="Normal picture">
-                        </div>
-                    </div>
-            </section>
+                <div class="pics">
+                    <picture>
+                        <source media="(min-width: 880px)" srcset="./images/250x200.png">
+                        <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                        <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                        <img src="./images/250x200.png" alt="Normal picture">
+                    </picture>
+                </div>
+                <div class="pics">
+                    <picture>
+                        <source media="(min-width: 880px)" srcset="./images/250x200.png">
+                        <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                        <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                        <img src="./images/250x200.png" alt="Normal picture">
+                    </picture>
+                </div>
+                <div class="pics">
+                    <picture>
+                        <source media="(min-width: 880px)" srcset="./images/250x200.png">
+                        <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                        <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                        <img src="./images/250x200.png" alt="Normal picture">
+                    </picture>
+                </div>
+            </div>
+        </section>
         <aside>
             <h2>My Awesome Product</h2>
             <div>
@@ -74,20 +103,18 @@
                     quisquam itaque eligendi!</p>
             </div>
             <div class="size-input">
-                <label for="size">Size
+                <label for="size">Size</label>
                     <select name="size" id="size">
                         <option value="Small">Small</option>
                         <option value="Small">Small</option>
                         <option value="Small">Small</option>
                     </select>
-                </label>
             </div>
-            <div class="quantity">
-                <label for="quantity">Quantity:
-                    <input type="text" id="quantity" placeholder="one fish two fish">
-                </label>
+            <div class="quantity-part">
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" placeholder="one fish two fish">
             </div>
-            <div class="buy">                
+            <div class="buy">
                 <button>Buy Now</button>
             </div>
             <div class="btns">
@@ -95,7 +122,7 @@
                 <button class="social">Twitter</button>
                 <button class="social">Yo</button>
             </div>
-        </aside>      
+        </aside>
         <hr>
         <section id="second-sec">
             <div class="links">
@@ -103,13 +130,18 @@
                     <a href="">Reviews</a></div>
                 <div class="page">
                     <a href="">Similar Products</a>
-                </div>                
+                </div>
             </div>
             <hr>
             <div class="second-row">
                 <article>
                     <div class="pics">
-                        <img src="./images/350x200.png" alt="Regular photo">
+                        <picture>
+                            <source media="(min-width: 880px)" srcset="./images/350x200.png">
+                            <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                            <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                            <img src="./images/350x200.png" alt="Regular photo">
+                        </picture>
                     </div>
                     <h4>Other Product <span> $22</span> </h4>
                     <p>Quis fugiat illo odio, mollitia nam animi ab obcaecati necessitatibus quidem reiciendis eius
@@ -118,7 +150,12 @@
                 </article>
                 <article>
                     <div class="pics">
-                        <img src="./images/350x200.png" alt="Regular photo">
+                        <picture>
+                            <source media="(min-width: 880px)" srcset="./images/350x200.png">
+                            <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                            <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                            <img src="./images/350x200.png" alt="Regular photo">
+                        </picture>
                     </div>
                     <h4>Other Product <span> $22</span> </h4>
                     <p>Quis fugiat illo odio, mollitia nam animi ab obcaecati necessitatibus quidem reiciendis eius
@@ -127,7 +164,12 @@
                 </article>
                 <article>
                     <div class="pics">
-                        <img src="./images/350x200.png" alt="Regular photo">
+                        <picture>
+                            <source media="(min-width: 880px)" srcset="./images/350x200.png">
+                            <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                            <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                            <img src="./images/350x200.png" alt="Regular photo">
+                        </picture>
                     </div>
                     <h4>Other Product<span> $22</span></h4>
                     <p>Quis fugiat illo odio, mollitia nam animi ab obcaecati necessitatibus quidem reiciendis eius
@@ -136,7 +178,12 @@
                 </article>
                 <article>
                     <div class="pics">
-                        <img src="./images/350x200.png" alt="Regular photo">
+                        <picture>
+                            <source media="(min-width: 880px)" srcset="./images/350x200.png">
+                            <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                            <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                            <img src="./images/350x200.png" alt="Regular photo">
+                        </picture>
                     </div>
                     <h4>Other Product<span> $22</span></h4>
                     <p>Quis fugiat illo odio, mollitia nam animi ab obcaecati necessitatibus quidem reiciendis eius
@@ -145,7 +192,12 @@
                 </article>
                 <article>
                     <div class="pics">
-                        <img src="./images/350x200.png" alt="Regular photo">
+                        <picture>
+                            <source media="(min-width: 880px)" srcset="./images/350x200.png">
+                            <source media="(min-width: 430px)" srcset="./images/180x130.png">
+                            <source media="(min-width: 338px)" srcset="./images/110x100.png">
+                            <img src="./images/350x200.png" alt="Regular photo">
+                        </picture>
                     </div>
                     <h4>Other Product<span> $22</span></h4>
                     <p> Quis fugiat illo odio, mollitia nam animi ab obcaecati necessitatibus quidem reiciendis eius
@@ -170,7 +222,6 @@
             </li>
         </ul>
     </footer>
-
 </body>
 
 </html>
