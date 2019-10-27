@@ -12,32 +12,14 @@ $blue-color: rgb(28, 180, 240);
     content: "";
 }
 
-@mixin xl-screen {
-    @media only screen and (max-width: 880px) {
-        @content;
-    }
-}
-
-@mixin l-screen {
-    @media only screen and (max-width: 840px) {
-        @content;
-    }
-}
-
 @mixin m-screen {
-    @media only screen and (max-width: 660px) {
+    @media only screen and (max-width: 768px) {
         @content;
     }
 }
 
 @mixin s-screen {
-    @media only screen and (max-width: 430px) {
-        @content;
-    }
-}
-
-@mixin xs-screen {
-    @media only screen and (max-width: 338px) {
+    @media only screen and (max-width: 320px) {
         @content;
     }
 }
@@ -47,25 +29,31 @@ body {
 
     nav {
         background: rgb(233, 226, 226);
-        padding: 7px 30px;
+        padding: 7px 30px; 
+        
+        @include s-screen{
+            h3{
+                width: 100%;
+                text-align: center;
+                
+        &::before{
+            content: "\f007";}
+        &::after{content: '\f002';}
+            }
 
-        @include m-screen {
-            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: flex-end;
+
+            @include s-screen{
+                display: none;                
+            }
         }
 
         ul {
             margin: 5px;
-
-            @include m-screen {
-                display: flex;
-                justify-content: center;
-                margin: 0px;
-            }
-
-            @include s-screen {
-                display: inline-block;
-                text-align: center;
-            }
 
             li {
                 list-style: none;
@@ -73,28 +61,18 @@ body {
                 padding: 0px 22px;
             }
 
-            img {
+            picture {
                 width: 20px;
                 float: left;
                 margin-left: -20px;
 
-                @include xs-screen {
-                    margin-left: -11px;
-                }
             }
         }
 
         #right-side-nav {
-            float: right;
 
-            @include m-screen {
-                float: none;
-                margin-top: 11px;
-                margin-left: 60px;
-            }
-
-            @include s-screen {
-                margin-left: 0px;
+            @include s-screen{
+                display: none;              
             }
 
             input {
@@ -127,9 +105,8 @@ body {
         font-weight: bolder;
         letter-spacing: -1px;
 
-        @include s-screen {
-            float: none;
-            padding: 10px 0px 17px 0px;
+        &::after {
+            @include clear();
         }
     }
 
@@ -140,6 +117,10 @@ body {
         &:hover {
             background: whitesmoke;
             padding: 8px;
+        }
+
+        @include s-screen{
+            font-size: 13px;
         }
     }
 
@@ -157,19 +138,16 @@ body {
     ul {
         display: flex;
 
-        @include xs-screen {
-            display: block;
-            text-align: center;
-        }
     }
 
     li {
         list-style: none;
         padding: 5px;
 
-        @include xs-screen {
-            padding: 0 11px;
+        @include s-screen{
+            padding: 2px;
         }
+
     }
 
     & li:nth-child(3)>a {
@@ -192,7 +170,9 @@ body {
 
     @include m-screen {
         width: 100%;
+        display: block;
     }
+
 }
 
 #big-pic {
@@ -202,48 +182,76 @@ body {
 
     img {
         width: 100%;
+        filter: brightness(0.5);
     }
 }
 
 .first-sec-imgs {
     display: flex;
+
+    div:nth-child(3){
+        @include s-screen{
+            display: none;
+        }
+    }
+
+    div:nth-child(4){
+        @include s-screen{
+            display: none;
+        }
+    }
 }
 
 main {
-    padding: 11px 25px;
-
-    @include s-screen {
-        padding: 11px 4px;
-    }
+    padding: 11px 25px;    
+    @include s-screen{
+        padding: 10px;
+    }    
 
     hr:nth-child(4) {
+        @include s-screen{
+            margin-top: 5px;
+        }
+
         margin-top: 40px;
         width: 100%;
     }
 
-    & hr:last-of-type {
-        margin-top: 20px;
+    hr:last-of-type{
+        @include s-screen{
+            margin-top: 15px;
+            width: 100%;
+        }
     }
 
     aside {
         float: right;
-        width: 32%;
-        padding: 15px;
+        width: 38%;
 
-        @include l-screen {
-            display: block;
-            float: none;
+        @include m-screen {
             width: 100%;
+            float: none;
+            margin: 10px;
+        }
+
+        @include s-screen{
+            margin: 0;
         }
 
         &::after {
             @include clear();
         }
 
+        h2{
+            @include s-screen{
+                padding: 15px 0px;
+            }
+        }
+
         div {
             margin: 10px 0px;
 
-            @include xl-screen {
+            @include s-screen{
                 margin: 0;
             }
         }
@@ -251,25 +259,11 @@ main {
         p {
             padding: 8px 0px;
             width: 95%;
-        }
 
-        .quantity {
-            padding: 20px 0px;
-
-            @include l-screen {
-                width: 35%;
-                margin: auto;
-            }
-        }
-
-        .buy {
-            @include m-screen {
-                width: 55%;
-                margin: auto;
-
-                button {
-                    width: 100%;
-                }
+            @include s-screen{
+                font-size: 13px;
+                width: 100%;
+                padding: 0;
             }
         }
 
@@ -280,29 +274,39 @@ main {
             color: white;
             font-size: 15px;
             margin: 4.5px 0px;
-            width: 95%;
+            width: 100%;
 
-            @include l-screen {
-                width: 35%;
-                margin: auto;
+        }
+
+        .size-input {
+            @include s-screen{
+                margin-top: 20px;
+            }
+            select {
+                display: block;
+                width: 100%;
+                height: 27px;
+                margin: 7px 2px;
+                color: rgb(163, 151, 151);
+                background: rgba(245, 245, 245, 0.459);
             }
         }
 
-        .size-input select {
-            display: block;
-            width: 95%;
-            height: 27px;
-            margin: 7px 2px;
-            color: rgb(163, 151, 151);
-            background: rgba(245, 245, 245, 0.459);
-        }
+        .quantity-part {
+            padding: 20px 0px;
 
-        .quantity input {
-            height: 27px;
-            width: 120px;
+            @include m-screen {
+                display: flex;
+            }
 
-            @include l-screen {
-                display: block;
+            input {
+                height: 27px;
+                width: 50%;
+
+                @include m-screen {
+                    width: 100%;
+                    margin-left: 10px;
+                }
             }
         }
 
@@ -313,16 +317,10 @@ main {
             padding: 5.5px;
             width: 31%;
 
-            @include xl-screen {
-                display: block;
-                width: 100%;
-                margin: 5px 0px;
+            @include m-screen {
+                display: none;
             }
 
-            @include l-screen {
-                width: 35%;
-                margin: 7px auto;
-            }
         }
     }
 }
@@ -332,8 +330,14 @@ main {
     display: inline-block;
     margin-top: 18px;
 
+    hr{
+        @include s-screen{
+            margin-top: 0;
+        }
+    }
+
     .page {
-        padding: 11px;
+        padding: 10px;
 
         a {
             color: rgb(57, 139, 247);
@@ -347,18 +351,29 @@ main {
 
     .second-row {
         justify-content: space-around;
-        margin-top: 15px;
-
-        @include m-screen {
-            display: inline-block;
-        }
+        margin: 4px 10px;
 
         article {
+            margin: 18px;
             width: 17%;
 
             @include m-screen {
-                width: 50%;
-                float: left;
+                margin: 10px;
+                width: auto;
+
+                &:nth-child(4) {
+                    display: none;
+                }
+
+                &:nth-child(5) {
+                    display: none;
+                }
+            }
+
+            @include s-screen{
+                &:nth-child(3){
+                    display: none;
+                }
             }
 
             &::after {
@@ -381,7 +396,7 @@ main {
             color: $blue-color;
             padding: 3px;
             width: 90%;
-            margin: 11px 0px 30px 0px;
+            margin: 11px 0px 20px 0px;
         }
     }
 }
@@ -390,37 +405,66 @@ main {
     padding: 3px;
     border: 1px solid grey;
     margin-right: 6px;
+    
+    .overlay{
+        display: none;
+    }
 
+    &:hover{
+        position: relative;
+        .overlay{
+            position: absolute;
+            top: 38%;
+            left: 19%;
+            display: block;
+            color: rgba(255, 255, 255, 0.548);
+            text-align: center;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
+    }
+    
     img {
         width: 100%;
     }
 }
 
 footer {
+    display: flex;
     padding: 11px 25px;
 
     h3 {
-        float: left;
         font-weight: bolder;
-        letter-spacing: -1px;
-    
-        &::after {
-            @include clear();
-        }
     }
 
     li {
         list-style: none;
         float: left;
-        padding: 0px 22px;
+        padding: 6px 22px;
+
+        &::after {
+            @include clear();
+        }
     }
-    @include xs-screen {
+
+    @include s-screen {
+        display: block;
+
         ul {
-            margin-left: 0px;
+            float: right;
+
+            &::after {
+                @include clear();
+            }
 
             li {
-                float: none;
-                padding: 0 55px;
+                &:nth-child(1){
+                    display: none;
+                }
+
+                float: left;
+                padding: 10px;
             }
         }
     }

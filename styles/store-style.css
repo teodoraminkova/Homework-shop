@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0px;
   padding: 0px;
@@ -11,55 +12,43 @@ body nav {
   background: #e9e2e2;
   padding: 7px 30px;
 }
-@media only screen and (max-width: 660px) {
-  body nav {
+@media only screen and (max-width: 320px) {
+  body nav h3 {
+    width: 100%;
     text-align: center;
+  }
+  body nav h3::before {
+    content: "";
+  }
+  body nav h3::after {
+    content: "";
+  }
+}
+body nav .menu {
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 320px) {
+  body nav .menu {
+    display: none;
   }
 }
 body nav ul {
   margin: 5px;
-}
-@media only screen and (max-width: 660px) {
-  body nav ul {
-    display: flex;
-    justify-content: center;
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 430px) {
-  body nav ul {
-    display: inline-block;
-    text-align: center;
-  }
 }
 body nav ul li {
   list-style: none;
   float: left;
   padding: 0px 22px;
 }
-body nav ul img {
+body nav ul picture {
   width: 20px;
   float: left;
   margin-left: -20px;
 }
-@media only screen and (max-width: 338px) {
-  body nav ul img {
-    margin-left: -11px;
-  }
-}
-body nav #right-side-nav {
-  float: right;
-}
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 320px) {
   body nav #right-side-nav {
-    float: none;
-    margin-top: 11px;
-    margin-left: 60px;
-  }
-}
-@media only screen and (max-width: 430px) {
-  body nav #right-side-nav {
-    margin-left: 0px;
+    display: none;
   }
 }
 body nav #right-side-nav input {
@@ -88,11 +77,10 @@ body h3 {
   font-weight: bolder;
   letter-spacing: -1px;
 }
-@media only screen and (max-width: 430px) {
-  body h3 {
-    float: none;
-    padding: 10px 0px 17px 0px;
-  }
+body h3::after {
+  clear: both;
+  display: block;
+  content: "";
 }
 body a {
   text-decoration: none;
@@ -101,6 +89,11 @@ body a {
 body a:hover {
   background: whitesmoke;
   padding: 8px;
+}
+@media only screen and (max-width: 320px) {
+  body a {
+    font-size: 13px;
+  }
 }
 body button {
   cursor: pointer;
@@ -113,19 +106,13 @@ body button:hover {
 #pages ul {
   display: flex;
 }
-@media only screen and (max-width: 338px) {
-  #pages ul {
-    display: block;
-    text-align: center;
-  }
-}
 #pages li {
   list-style: none;
   padding: 5px;
 }
-@media only screen and (max-width: 338px) {
+@media only screen and (max-width: 320px) {
   #pages li {
-    padding: 0 11px;
+    padding: 2px;
   }
 }
 #pages li:nth-child(3) > a {
@@ -144,9 +131,10 @@ body button:hover {
   display: inline-block;
   width: 60%;
 }
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 768px) {
   #first-sec {
     width: 100%;
+    display: block;
   }
 }
 
@@ -157,37 +145,60 @@ body button:hover {
 }
 #big-pic img {
   width: 100%;
+  filter: brightness(0.5);
 }
 
 .first-sec-imgs {
   display: flex;
 }
+@media only screen and (max-width: 320px) {
+  .first-sec-imgs div:nth-child(3) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .first-sec-imgs div:nth-child(4) {
+    display: none;
+  }
+}
 
 main {
   padding: 11px 25px;
 }
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 320px) {
   main {
-    padding: 11px 4px;
+    padding: 10px;
   }
 }
 main hr:nth-child(4) {
   margin-top: 40px;
   width: 100%;
 }
-main hr:last-of-type {
-  margin-top: 20px;
+@media only screen and (max-width: 320px) {
+  main hr:nth-child(4) {
+    margin-top: 5px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  main hr:last-of-type {
+    margin-top: 15px;
+    width: 100%;
+  }
 }
 main aside {
   float: right;
-  width: 32%;
-  padding: 15px;
+  width: 38%;
 }
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 768px) {
   main aside {
-    display: block;
-    float: none;
     width: 100%;
+    float: none;
+    margin: 10px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  main aside {
+    margin: 0;
   }
 }
 main aside::after {
@@ -195,10 +206,15 @@ main aside::after {
   display: block;
   content: "";
 }
+@media only screen and (max-width: 320px) {
+  main aside h2 {
+    padding: 15px 0px;
+  }
+}
 main aside div {
   margin: 10px 0px;
 }
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 320px) {
   main aside div {
     margin: 0;
   }
@@ -207,22 +223,11 @@ main aside p {
   padding: 8px 0px;
   width: 95%;
 }
-main aside .quantity {
-  padding: 20px 0px;
-}
-@media only screen and (max-width: 840px) {
-  main aside .quantity {
-    width: 35%;
-    margin: auto;
-  }
-}
-@media only screen and (max-width: 660px) {
-  main aside .buy {
-    width: 55%;
-    margin: auto;
-  }
-  main aside .buy button {
+@media only screen and (max-width: 320px) {
+  main aside p {
+    font-size: 13px;
     width: 100%;
+    padding: 0;
   }
 }
 main aside button {
@@ -232,29 +237,37 @@ main aside button {
   color: white;
   font-size: 15px;
   margin: 4.5px 0px;
-  width: 95%;
+  width: 100%;
 }
-@media only screen and (max-width: 840px) {
-  main aside button {
-    width: 35%;
-    margin: auto;
+@media only screen and (max-width: 320px) {
+  main aside .size-input {
+    margin-top: 20px;
   }
 }
 main aside .size-input select {
   display: block;
-  width: 95%;
+  width: 100%;
   height: 27px;
   margin: 7px 2px;
   color: #a39797;
   background: rgba(245, 245, 245, 0.459);
 }
-main aside .quantity input {
-  height: 27px;
-  width: 120px;
+main aside .quantity-part {
+  padding: 20px 0px;
 }
-@media only screen and (max-width: 840px) {
-  main aside .quantity input {
-    display: block;
+@media only screen and (max-width: 768px) {
+  main aside .quantity-part {
+    display: flex;
+  }
+}
+main aside .quantity-part input {
+  height: 27px;
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  main aside .quantity-part input {
+    width: 100%;
+    margin-left: 10px;
   }
 }
 main aside .social {
@@ -264,17 +277,9 @@ main aside .social {
   padding: 5.5px;
   width: 31%;
 }
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 768px) {
   main aside .social {
-    display: block;
-    width: 100%;
-    margin: 5px 0px;
-  }
-}
-@media only screen and (max-width: 840px) {
-  main aside .social {
-    width: 35%;
-    margin: 7px auto;
+    display: none;
   }
 }
 
@@ -283,8 +288,13 @@ main aside .social {
   display: inline-block;
   margin-top: 18px;
 }
+@media only screen and (max-width: 320px) {
+  #second-sec hr {
+    margin-top: 0;
+  }
+}
 #second-sec .page {
-  padding: 11px;
+  padding: 10px;
 }
 #second-sec .page a {
   color: #398bf7;
@@ -295,20 +305,27 @@ main aside .social {
 }
 #second-sec .second-row {
   justify-content: space-around;
-  margin-top: 15px;
-}
-@media only screen and (max-width: 660px) {
-  #second-sec .second-row {
-    display: inline-block;
-  }
+  margin: 4px 10px;
 }
 #second-sec .second-row article {
+  margin: 18px;
   width: 17%;
 }
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 768px) {
   #second-sec .second-row article {
-    width: 50%;
-    float: left;
+    margin: 10px;
+    width: auto;
+  }
+  #second-sec .second-row article:nth-child(4) {
+    display: none;
+  }
+  #second-sec .second-row article:nth-child(5) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #second-sec .second-row article:nth-child(3) {
+    display: none;
   }
 }
 #second-sec .second-row article::after {
@@ -329,7 +346,7 @@ main aside .social {
   color: #1cb4f0;
   padding: 3px;
   width: 90%;
-  margin: 11px 0px 30px 0px;
+  margin: 11px 0px 20px 0px;
 }
 
 .pics {
@@ -337,35 +354,62 @@ main aside .social {
   border: 1px solid grey;
   margin-right: 6px;
 }
+.pics .overlay {
+  display: none;
+}
+.pics:hover {
+  position: relative;
+}
+.pics:hover .overlay {
+  position: absolute;
+  top: 38%;
+  left: 19%;
+  display: block;
+  color: rgba(255, 255, 255, 0.548);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
 .pics img {
   width: 100%;
 }
 
 footer {
+  display: flex;
   padding: 11px 25px;
 }
 footer h3 {
-  float: left;
   font-weight: bolder;
-  letter-spacing: -1px;
-}
-footer h3::after {
-  clear: both;
-  display: block;
-  content: "";
 }
 footer li {
   list-style: none;
   float: left;
-  padding: 0px 22px;
+  padding: 6px 22px;
 }
-@media only screen and (max-width: 338px) {
+footer li::after {
+  clear: both;
+  display: block;
+  content: "";
+}
+@media only screen and (max-width: 320px) {
+  footer {
+    display: block;
+  }
   footer ul {
-    margin-left: 0px;
+    float: right;
+  }
+  footer ul::after {
+    clear: both;
+    display: block;
+    content: "";
   }
   footer ul li {
-    float: none;
-    padding: 0 55px;
+    float: left;
+    padding: 10px;
+  }
+  footer ul li:nth-child(1) {
+    display: none;
   }
 }
 
